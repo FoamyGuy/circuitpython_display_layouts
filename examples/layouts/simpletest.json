@@ -1,0 +1,40 @@
+{
+  "view_type": "AbsoluteLayout",
+  "sub_views": [
+    {
+      "view_type": "Label",
+      "id":"main_lbl",
+      "attributes":{
+        "anchored_position": ["DISPLAY_WIDTH/2", "DISPLAY_HEIGHT/8"],
+        "color": "0xFF00FF",
+        "anchor_point": [0.5, 0.0],
+        "text": "1",
+        "max_glyphs": 60,
+        "background_color": "0x0000FF",
+        "line_spacing": 1.8
+      }
+    },
+    {
+      "view_type": "Image",
+      "id":"main_img",
+      "attributes":{
+        "image_file": "images/2bit.bmp",
+        "x": "DISPLAY_WIDTH/3",
+        "y":60,
+        "padding": 16,
+        "background_color": "0x777777"
+      }
+    },
+    {
+      "view_type": "OnDiskBitmap",
+      "id":"main_img",
+      "attributes":{
+        "image_file": "images/4bit.bmp",
+        "x": "DISPLAY_WIDTH-50",
+        "y":70,
+        "padding": 16,
+        "background_color": "0x777777"
+      }
+    }
+  ]
+}

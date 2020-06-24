@@ -1,0 +1,14 @@
+Layout types:
+- Linear - puts children in a list horizontally or vertically
+- Absolute - children must declare their own x/y coordinates
+- Relative - children can be placed relative to parent or other child views
+- Grid - put children in a two dimensional Grid
+
+Views:
+- Label - display_text label
+- Image - image_load
+- OnDiskBitmap - displayio.OnDiskBitmap
+- TileGrid ?
+- Group ?
+- Button - adafruit_button.Button
+- TextMap -
