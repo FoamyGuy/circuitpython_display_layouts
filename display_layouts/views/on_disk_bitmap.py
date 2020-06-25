@@ -34,14 +34,6 @@ class OnDiskBitmapView(View):
             if "background_color" in layout_json["attributes"]:
                 _background_color = int(layout_json["attributes"]["background_color"], 16)
 
-            _x = 0
-            if "x" in layout_json["attributes"]:
-                _x = self.keyword_compiler(layout_json["attributes"]["x"])
-
-            _y = 0
-            if "y" in layout_json["attributes"]:
-                _y = self.keyword_compiler(layout_json["attributes"]["y"])
-
             _padding_top = 0
             if "padding_top" in layout_json["attributes"]:
                 _padding_top = int(layout_json["attributes"]["padding_top"])
@@ -69,17 +61,28 @@ class OnDiskBitmapView(View):
             group = displayio.Group()
             odb_grid.x = _padding // 2
             odb_grid.y = _padding // 2
-            group.x = _x
-            group.y = _y
+            _width = odb.width
+            _height = odb.height
             if _padding and _background_color:
                 # Draw a green background
                 bg_bitmap = displayio.Bitmap(odb.width + _padding, odb.height + _padding, 1)
                 bg_palette = displayio.Palette(1)
                 bg_palette[0] = _background_color
-
+                _width = bg_bitmap.width
+                _height = odb.height
                 bg_sprite = displayio.TileGrid(bg_bitmap, pixel_shader=bg_palette, x=0, y=0)
                 group.append(bg_sprite)
 
+            _x = 0
+            if "x" in layout_json["attributes"]:
+                _x = self.keyword_compiler(layout_json["attributes"]["x"], {"WIDTH":_width, "HEIGHT": _height})
+
+            _y = 0
+            if "y" in layout_json["attributes"]:
+                _y = self.keyword_compiler(layout_json["attributes"]["y"], {"WIDTH":_width, "HEIGHT": _height})
+
+            group.x = _x
+            group.y = _y
             group.append(odb_grid)
             self.on_disk_bitmap = group
 
