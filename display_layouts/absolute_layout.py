@@ -40,13 +40,13 @@ class AbsoluteLayout:
             if view["view_type"] == "Label":
                 lbl_view = LabelView(self._display, view)
                 self._sub_views.append(lbl_view)
-                layout_group.append(lbl_view.view)
+                layout_group.append(lbl_view.label)
             if view["view_type"] == "Image":
                 img_view = ImageView(self._display, view)
                 self._sub_views.append(img_view)
-                layout_group.append(img_view.view)
+                layout_group.append(img_view.image)
             if view["view_type"] == "OnDiskBitmap":
                 odb_view = OnDiskBitmapView(self._display, view)
                 self._sub_views.append(odb_view)
-                layout_group.append(odb_view.view)
+                layout_group.append(odb_view.on_disk_bitmap)
         return layout_group

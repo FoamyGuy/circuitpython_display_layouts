@@ -9,8 +9,8 @@ main_layout = AbsoluteLayout(board.DISPLAY, layout_str)
 
 board.DISPLAY.show(main_layout.view)
 
-#main_layout.sub_view_by_index(0).view.text = "Changed Text\nBy Index"
-main_layout.sub_view_by_id("main_lbl").view.text = "Changed\nText By Id"
+#main_layout.sub_view_by_index(0).label.text = "Changed Text\nBy Index"
+main_layout.sub_view_by_id("main_lbl").label.text = "Changed\nText By Id"
 
 while True:
     pass

@@ -81,17 +81,17 @@ class ImageView(View):
                 group.append(bg_sprite)
 
             group.append(img_tile_grid)
-            self.view = group
+            self.image = group
 
 
 
             if "anchor_point" in layout_json["attributes"]:
                 point = layout_json["attributes"]["anchor_point"]
-                self.view.anchor_point = (point[0], point[1])
+                self.image.anchor_point = (point[0], point[1])
 
             if "anchored_position" in layout_json["attributes"]:
                 pos = layout_json["attributes"]["anchored_position"]
-                self.view.anchored_position = (self.keyword_compiler(pos[0]), self.keyword_compiler(pos[1]))
+                self.image.anchored_position = (self.keyword_compiler(pos[0]), self.keyword_compiler(pos[1]))
         else:
             #default attributes
             pass
