@@ -1,35 +1,14 @@
 from adafruit_display_text import label
 import terminalio
 from adafruit_bitmap_font import bitmap_font
+
+from display_layouts.layout_exceptions import MissingTypeError, IncorrectTypeError, MissingRequiredAttributesError
+from display_layouts.views.view import View
+
 REQUIRED_ATTRIBUTES = []
-class LabelView():
-    def keyword_compiler(self, possible_keyword):
-        if type(possible_keyword) == str:
-            if "DISPLAY_WIDTH" in possible_keyword:
-                if "/" in possible_keyword:
-                    return self._display.width // int(possible_keyword.split("/")[1])
-                elif "-" in possible_keyword:
-                    return self._display.width - int(possible_keyword.split("-")[1])
-                else:
-                    return self._display.width
 
-            elif "DISPLAY_HEIGHT" in possible_keyword:
-                if "/" in possible_keyword:
-                    return self._display.height // int(possible_keyword.split("/")[1])
-                elif "-" in possible_keyword:
-                    return self._display.height - int(possible_keyword.split("-")[1])
-                else:
-                    return self._display.height
 
-            elif "/" in possible_keyword:
-                return int(possible_keyword.split("/")[0]) // int(possible_keyword.split("/")[1])
-            elif "-" in possible_keyword:
-                return int(possible_keyword.split("-")[0]) - int(possible_keyword.split("-")[1])
-            else:
-                return possible_keyword
-        else:
-            return possible_keyword
-
+class LabelView(View):
     def __init__(self, display, layout_json):
         self.json = layout_json
         if "view_type" not in layout_json:
