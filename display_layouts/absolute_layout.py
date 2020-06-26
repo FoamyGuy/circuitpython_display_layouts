@@ -4,6 +4,7 @@ from display_layouts.layout_exceptions import MissingTypeError, IncorrectTypeErr
 from display_layouts.views.label import LabelView
 from display_layouts.views.image import ImageView
 from display_layouts.views.on_disk_bitmap import OnDiskBitmapView
+from display_layouts.views.line import LineView
 
 class AbsoluteLayout:
     def __init__(self, display, layout_json):
@@ -49,4 +50,9 @@ class AbsoluteLayout:
                 odb_view = OnDiskBitmapView(self._display, view)
                 self._sub_views.append(odb_view)
                 layout_group.append(odb_view.on_disk_bitmap)
+            if view["view_type"] == "Line":
+                line_view = LineView(self._display, view)
+                print(line_view.json)
+                self._sub_views.append(line_view)
+                layout_group.append(line_view.line)
         return layout_group
