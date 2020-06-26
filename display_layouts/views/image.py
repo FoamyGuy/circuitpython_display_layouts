@@ -33,14 +33,6 @@ class ImageView(View):
             if "background_color" in layout_json["attributes"]:
                 _background_color = int(layout_json["attributes"]["background_color"], 16)
 
-            _x = 0
-            if "x" in layout_json["attributes"]:
-                _x = self.keyword_compiler(layout_json["attributes"]["x"])
-
-            _y = 0
-            if "y" in layout_json["attributes"]:
-                _y = self.keyword_compiler(layout_json["attributes"]["y"])
-
             _padding_top = 0
             if "padding_top" in layout_json["attributes"]:
                 _padding_top = int(layout_json["attributes"]["padding_top"])
@@ -69,17 +61,28 @@ class ImageView(View):
             group = displayio.Group()
             img_tile_grid.x = _padding // 2
             img_tile_grid.y = _padding // 2
-            group.x = _x
-            group.y = _y
+
+            _width = image.width
+            _height = image.height
             if _padding and _background_color:
                 # Draw a green background
                 bg_bitmap = displayio.Bitmap(image.width + _padding, image.height + _padding, 1)
                 bg_palette = displayio.Palette(1)
                 bg_palette[0] = _background_color
-
+                _width = bg_bitmap.width
+                _height = bg_bitmap.height
                 bg_sprite = displayio.TileGrid(bg_bitmap, pixel_shader=bg_palette, x=0, y=0)
                 group.append(bg_sprite)
 
+            _x = 0
+            if "x" in layout_json["attributes"]:
+                _x = self.keyword_compiler(layout_json["attributes"]["x"], {"WIDTH":_width, "HEIGHT": _height})
+
+            _y = 0
+            if "y" in layout_json["attributes"]:
+                _y = self.keyword_compiler(layout_json["attributes"]["y"], {"WIDTH":_width, "HEIGHT": _height})
+            group.x = _x
+            group.y = _y
             group.append(img_tile_grid)
             self.image = group
 

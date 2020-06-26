@@ -69,7 +69,7 @@ class OnDiskBitmapView(View):
                 bg_palette = displayio.Palette(1)
                 bg_palette[0] = _background_color
                 _width = bg_bitmap.width
-                _height = odb.height
+                _height = bg_bitmap.height
                 bg_sprite = displayio.TileGrid(bg_bitmap, pixel_shader=bg_palette, x=0, y=0)
                 group.append(bg_sprite)
 
