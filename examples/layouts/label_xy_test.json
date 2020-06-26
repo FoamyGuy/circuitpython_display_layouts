@@ -1,0 +1,18 @@
+{
+  "view_type": "AbsoluteLayout",
+  "sub_views": [
+    {
+      "view_type": "Label",
+      "id":"main_lbl",
+      "attributes":{
+        "x": "DISPLAY_WIDTH/2-WIDTH/2",
+        "y": "10+HEIGHT/2",
+        "color": "0xFF00FF",
+        "text": "1",
+        "max_glyphs": 60,
+        "background_color": "0x0000FF",
+        "line_spacing": 1.8
+      }
+    }
+  ]
+}

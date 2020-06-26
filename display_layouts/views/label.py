@@ -46,13 +46,6 @@ class LabelView(View):
             if "line_spacing" in layout_json["attributes"]:
                 _line_spacing = layout_json["attributes"]["line_spacing"]
 
-            _x = 0
-            if "x" in layout_json["attributes"]:
-                _x = self.keyword_compiler(layout_json["attributes"]["x"])
-
-            _y = 0
-            if "y" in layout_json["attributes"]:
-                _y = self.keyword_compiler(layout_json["attributes"]["y"])
 
             _max_glyphs = None
             if "max_glyphs" in layout_json["attributes"]:
@@ -78,9 +71,11 @@ class LabelView(View):
             if "padding_bottom" in layout_json["attributes"]:
                 _padding_bottom = int(layout_json["attributes"]["padding_bottom"])
 
+
+
             self.label = label.Label(
                 _font, text=_text, color=_color,
-                x=_x, y=_y, max_glyphs=_max_glyphs,
+                max_glyphs=_max_glyphs,
                 background_color=_background_color,
                 line_spacing=_line_spacing,
                 background_tight=_background_tight,
@@ -89,6 +84,8 @@ class LabelView(View):
                 padding_right=_padding_right,
                 padding_top=_padding_top
             )
+
+            self.update_position()
 
             if "anchor_point" in layout_json["attributes"]:
                 point = layout_json["attributes"]["anchor_point"]
@@ -100,3 +97,17 @@ class LabelView(View):
         else:
             #default attributes
             pass
+    def update_position(self):
+        layout_json = self.json
+        print(self.label.bounding_box)
+        _width = self.label.bounding_box[2]
+        _height = self.label.bounding_box[3]
+        print((_width,_height))
+        _x = 0
+        if "x" in layout_json["attributes"]:
+            _x = self.keyword_compiler(layout_json["attributes"]["x"], {"WIDTH":_width, "HEIGHT": _height})
+            self.label.x = _x
+        _y = 0
+        if "y" in layout_json["attributes"]:
+            _y = self.keyword_compiler(layout_json["attributes"]["y"], {"WIDTH":_width, "HEIGHT": _height})
+            self.label.y = _y
