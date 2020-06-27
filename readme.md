@@ -56,8 +56,8 @@ If you have any feedback about the project please get in touch I am curious to g
 Release Notes:
 - 6/26/2020:
     - Shapes from the display_shapes library are now supported with `view_type` of `Line`, `Rect`, `RoundRect`, `Polygon`
-    - [Shapes example](examples\display_layouts_shapes_test.py)
+    - [Shapes example](examples/display_layouts_shapes_test.py)
 - 6/25/2020:
     - `WIDTH` and `HEIGHT` are now supported in relavent attribute fields. They will refer to the final views size.
     - Complex attribute values where relavent now support by using sanitized `eval()`
-    - [Unsave eval test](examples\display_layouts_test_unsafe_eval.py) 
+    - [Unsave eval test](examples/display_layouts_test_unsafe_eval.py) 
