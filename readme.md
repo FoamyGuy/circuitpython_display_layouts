@@ -54,6 +54,9 @@ For more examples see the [examples](examples) directory in the repo.
 If you have any feedback about the project please get in touch I am curious to get input :)
 
 Release Notes:
+- 6/27/2020:
+    - Circle view_type implemented and added to [Shapes example](examples/display_layouts_shapes_test.py) and [layout file](examples/layouts/shapes_test.json)
+    - Triangle view_type implemented and added to [Shapes example](examples/display_layouts_shapes_test.py) and [layout file](examples/layouts/shapes_test.json)
 - 6/26/2020:
     - Shapes from the display_shapes library are now supported with `view_type` of `Line`, `Rect`, `RoundRect`, `Polygon`
     - [Shapes example](examples/display_layouts_shapes_test.py) and [layout file](examples/layouts/shapes_test.json)
