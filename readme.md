@@ -57,6 +57,8 @@ Release Notes:
 - 6/26/2020:
     - Shapes from the display_shapes library are now supported with `view_type` of `Line`, `Rect`, `RoundRect`, `Polygon`
     - [Shapes example](examples/display_layouts_shapes_test.py) and [layout file](examples/layouts/shapes_test.json)
+    - `scale` attribute for LabelView
+    - [Badge example](examples/display_layouts_badge_test.py) and [layout json](examples/layouts/badge_test.json)
 - 6/25/2020:
     - `WIDTH` and `HEIGHT` are now supported in relavent attribute fields. They will refer to the final views size.
     - Complex attribute values where relavent now support by using sanitized `eval()`
