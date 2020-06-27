@@ -48,7 +48,7 @@
     {
       "view_type": "Polygon",
       "attributes":{
-          "points": [[4,"DISPLAY_HEIGHT/2+8"],[14, "DISPLAY_HEIGHT/2-8"],[50,"DISPLAY_HEIGHT/2-8"], [60,"DISPLAY_HEIGHT/2+8"]]
+          "points": [[4,"DISPLAY_HEIGHT/2+8"],[14, "DISPLAY_HEIGHT/2-8"],[50,"DISPLAY_HEIGHT/2-8"], [60,"DISPLAY_HEIGHT/2+8"]],
           "outline": "0x00FFFF"
       }
     },
