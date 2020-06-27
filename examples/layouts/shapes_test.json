@@ -37,8 +37,8 @@
       "attributes":{
           "x": "DISPLAY_WIDTH-WIDTH-4",
           "y": "DISPLAY_HEIGHT/2-HEIGHT/2",
-          "height": 24,
-          "width": 34,
+          "height": 34,
+          "width": 24,
           "stroke": 2,
           "radius": 10,
           "fill": "0xFF00FF",
@@ -60,6 +60,19 @@
           "radius": 20,
           "fill": "0xAAAAAA",
           "outline": "0xFF0000"
+      }
+    },
+    {
+      "view_type": "Triangle",
+      "attributes":{
+          "x0": "DISPLAY_WIDTH/2+10",
+          "y0": "DISPLAY_HEIGHT/2",
+          "x1": "DISPLAY_WIDTH/2+40",
+          "y1": "DISPLAY_HEIGHT/2-20",
+          "x2": "DISPLAY_WIDTH/2+40",
+          "y2": "DISPLAY_HEIGHT/2+20",
+          "fill": "0x00FF00",
+          "outline": "0xFF00FF"
       }
     }
   ]

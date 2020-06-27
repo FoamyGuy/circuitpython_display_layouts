@@ -9,6 +9,7 @@ from display_layouts.views.line import LineView
 from display_layouts.views.rect import RectView
 from display_layouts.views.roundrect import RoundRectView
 from display_layouts.views.circle import CircleView
+from display_layouts.views.triangle import TriangleView
 
 class AbsoluteLayout:
     def __init__(self, display, layout_json):
@@ -75,4 +76,8 @@ class AbsoluteLayout:
                 circle_view = CircleView(self._display, view)
                 self._sub_views.append(circle_view)
                 layout_group.append(circle_view.circle)
+            if view["view_type"] == "Triangle":
+                triangle_view = TriangleView(self._display, view)
+                self._sub_views.append(triangle_view)
+                layout_group.append(triangle_view.triangle)
         return layout_group
