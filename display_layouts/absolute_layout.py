@@ -3,8 +3,11 @@ import displayio
 from display_layouts.layout_exceptions import MissingTypeError, IncorrectTypeError, MissingSubViewsError
 from display_layouts.views.label import LabelView
 from display_layouts.views.image import ImageView
+from display_layouts.views.polygon import PolygonView
 from display_layouts.views.on_disk_bitmap import OnDiskBitmapView
 from display_layouts.views.line import LineView
+from display_layouts.views.rect import RectView
+from display_layouts.views.roundrect import RoundRectView
 
 class AbsoluteLayout:
     def __init__(self, display, layout_json):
@@ -55,4 +58,16 @@ class AbsoluteLayout:
                 print(line_view.json)
                 self._sub_views.append(line_view)
                 layout_group.append(line_view.line)
+            if view["view_type"] == "Polygon":
+                polygon_view = PolygonView(self._display, view)
+                self._sub_views.append(polygon_view)
+                layout_group.append(polygon_view.polygon)
+            if view["view_type"] == "Rect":
+                rect_view = RectView(self._display, view)
+                self._sub_views.append(rect_view)
+                layout_group.append(rect_view.rect)
+            if view["view_type"] == "RoundRect":
+                roundrect_view = RoundRectView(self._display, view)
+                self._sub_views.append(roundrect_view)
+                layout_group.append(roundrect_view.roundrect)
         return layout_group
