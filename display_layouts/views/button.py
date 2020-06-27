@@ -1,7 +1,8 @@
 import displayio
 import terminalio
 from adafruit_button import Button
-from display_layouts.layout_exceptions import MissingTypeError, IncorrectTypeError, MissingRequiredAttributesError, MissingAttributesError
+from display_layouts.layout_exceptions import MissingTypeError, IncorrectTypeError, MissingRequiredAttributesError, \
+    MissingAttributesError, InvalidAttributeValue
 from display_layouts.views.view import View
 
 REQUIRED_ATTRIBUTES = ["x", "y", "height", "width"]
@@ -26,20 +27,31 @@ class ButtonView(View):
                 raise MissingRequiredAttributesError("Missing required attributes: {}".format(_missing_attrs))
 
             _outline = 0xFFFFFF
-            if "outline" in layout_json["attributes"]:
-                _outline = int(layout_json["attributes"]["outline"], 16)
+            if "outline_color" in layout_json["attributes"]:
+                _outline = int(layout_json["attributes"]["outline_color"], 16)
 
             _fill = 0x444444
-            if "fill" in layout_json["attributes"]:
-                _fill = int(layout_json["attributes"]["fill"], 16)
+            if "fill_color" in layout_json["attributes"]:
+                _fill = int(layout_json["attributes"]["fill_color"], 16)
 
             _label_color = 0xFFFFFF
             if "label_color" in layout_json["attributes"]:
-                _fill = int(layout_json["attributes"]["label_color"], 16)
+                _label_color = int(layout_json["attributes"]["label_color"], 16)
 
             _style = Button.ROUNDRECT
             if "style" in layout_json["attributes"]:
-                _style = self.keyword_compiler(layout_json["attributes"]["style"])
+                _styles = {
+                    "RECT": Button.RECT,
+                    "ROUNDRECT": Button.ROUNDRECT,
+                    "SHADOWRECT": Button.SHADOWRECT,
+                    "SHADOWROUNDRECT": Button.SHADOWROUNDRECT
+                }
+                if layout_json["attributes"]["style"] in _styles.keys():
+                    _style = _styles[layout_json["attributes"]["style"]]
+                else:
+                    raise InvalidAttributeValue(
+                        "'{}'.\nValid values are: [{}]".format(layout_json["attributes"]["style"],
+                                                               ", ".join(_styles.keys())))
 
             _label = ""
             if "label" in layout_json["attributes"]:
