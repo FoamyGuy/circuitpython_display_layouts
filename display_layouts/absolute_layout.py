@@ -9,6 +9,7 @@ from display_layouts.views.line import LineView
 from display_layouts.views.rect import RectView
 from display_layouts.views.roundrect import RoundRectView
 from display_layouts.views.circle import CircleView
+from display_layouts.views.button import ButtonView
 from display_layouts.views.triangle import TriangleView
 
 class AbsoluteLayout:
@@ -57,7 +58,6 @@ class AbsoluteLayout:
                 layout_group.append(odb_view.on_disk_bitmap)
             if view["view_type"] == "Line":
                 line_view = LineView(self._display, view)
-                print(line_view.json)
                 self._sub_views.append(line_view)
                 layout_group.append(line_view.line)
             if view["view_type"] == "Polygon":
@@ -80,4 +80,8 @@ class AbsoluteLayout:
                 triangle_view = TriangleView(self._display, view)
                 self._sub_views.append(triangle_view)
                 layout_group.append(triangle_view.triangle)
+            if view["view_type"] == "Button":
+                button_view = ButtonView(self._display, view)
+                self._sub_views.append(button_view)
+                layout_group.append(button_view.button.group)
         return layout_group

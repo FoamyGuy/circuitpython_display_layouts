@@ -1,0 +1,15 @@
+{
+  "view_type": "AbsoluteLayout",
+  "sub_views": [
+    {
+      "view_type": "Button",
+      "attributes":{
+          "x": "DISPLAY_WIDTH/2-WIDTH/2",
+          "y": "DISPLAY_HEIGHT/2",
+          "height": 34,
+          "width": 74,
+          "label": "HELLO WORLD"
+      }
+    }
+  ]
+}
