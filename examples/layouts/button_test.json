@@ -3,6 +3,7 @@
   "sub_views": [
     {
       "view_type": "Button",
+      "id": "main_btn",
       "attributes":{
           "x": "DISPLAY_WIDTH/2-WIDTH/2",
           "y": "DISPLAY_HEIGHT/2",
