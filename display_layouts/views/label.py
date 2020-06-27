@@ -1,7 +1,7 @@
 from adafruit_display_text import label
 import terminalio
 from adafruit_bitmap_font import bitmap_font
-
+import displayio
 from display_layouts.layout_exceptions import MissingTypeError, IncorrectTypeError, MissingRequiredAttributesError
 from display_layouts.views.view import View
 
@@ -42,7 +42,7 @@ class LabelView(View):
             if "background_color" in layout_json["attributes"]:
                 _background_color = int(layout_json["attributes"]["background_color"], 16)
 
-            _line_spacing = None
+            _line_spacing = 1.25
             if "line_spacing" in layout_json["attributes"]:
                 _line_spacing = layout_json["attributes"]["line_spacing"]
 
@@ -71,7 +71,9 @@ class LabelView(View):
             if "padding_bottom" in layout_json["attributes"]:
                 _padding_bottom = int(layout_json["attributes"]["padding_bottom"])
 
-
+            self._scale = 1
+            if "scale" in layout_json["attributes"]:
+                self._scale = int(layout_json["attributes"]["scale"])
 
             self.label = label.Label(
                 _font, text=_text, color=_color,
@@ -85,6 +87,14 @@ class LabelView(View):
                 padding_top=_padding_top
             )
 
+
+            if self._scale != 1:
+                group = displayio.Group(scale=self._scale)
+            else:
+                group = displayio.Group()
+
+            group.append(self.label)
+            self.group = group
             self.update_position()
 
             if "anchor_point" in layout_json["attributes"]:
@@ -105,9 +115,9 @@ class LabelView(View):
         print((_width,_height))
         _x = 0
         if "x" in layout_json["attributes"]:
-            _x = self.keyword_compiler(layout_json["attributes"]["x"], {"WIDTH":_width, "HEIGHT": _height})
-            self.label.x = _x
+            _x = self.keyword_compiler(layout_json["attributes"]["x"], {"WIDTH":_width*self._scale, "HEIGHT": _height*self._scale})
+            self.group.x = _x
         _y = 0
         if "y" in layout_json["attributes"]:
-            _y = self.keyword_compiler(layout_json["attributes"]["y"], {"WIDTH":_width, "HEIGHT": _height})
-            self.label.y = _y
+            _y = self.keyword_compiler(layout_json["attributes"]["y"], {"WIDTH":_width*self._scale, "HEIGHT": _height*self._scale})
+            self.group.y = _y

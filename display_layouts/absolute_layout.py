@@ -44,7 +44,7 @@ class AbsoluteLayout:
             if view["view_type"] == "Label":
                 lbl_view = LabelView(self._display, view)
                 self._sub_views.append(lbl_view)
-                layout_group.append(lbl_view.label)
+                layout_group.append(lbl_view.group)
             if view["view_type"] == "Image":
                 img_view = ImageView(self._display, view)
                 self._sub_views.append(img_view)
