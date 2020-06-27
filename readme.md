@@ -57,7 +57,7 @@ Release Notes:
 - 6/27/2020:
     - Circle view_type implemented and added to [Shapes example](examples/display_layouts_shapes_test.py) and [shapes_test.json](examples/layouts/shapes_test.json) layout file
     - Triangle view_type implemented and added to [Shapes example](examples/display_layouts_shapes_test.py) and [shapes_test.json](examples/layouts/shapes_test.json) layout file
-     - Triangle view_type implemented and added to [Button example](examples/display_button_test.py) and [button_test.json](examples/layouts/button_test.json) layout file
+    - Button view_type implemented and added to [Button example](examples/display_button_test.py) and [button_test.json](examples/layouts/button_test.json) layout file
 - 6/26/2020:
     - Shapes from the display_shapes library are now supported with `view_type` of `Line`, `Rect`, `RoundRect`, `Polygon`
     - [Shapes example](examples/display_layouts_shapes_test.py) and [layout file](examples/layouts/shapes_test.json)
