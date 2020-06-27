@@ -35,9 +35,9 @@
       "view_type": "Rect",
       "attributes":{
         "x": "0",
-        "y": "DISPLAY_HEIGHT/2-10",
+        "y": "DISPLAY_HEIGHT/2-16",
         "width": "DISPLAY_WIDTH",
-        "height": "60",
+        "height": "68",
         "fill": "0xFFFFFF"
       }
     },
@@ -46,10 +46,11 @@
       "id":"name_lbl",
       "attributes":{
         "x": "DISPLAY_WIDTH/2-WIDTH/2",
-        "y": "DISPLAY_HEIGHT/2+HEIGHT/2",
+        "y": "DISPLAY_HEIGHT/2+HEIGHT/2-10",
+        "line_spacing": 0.65,
         "scale":3,
-        "color": "0xFF0000",
-        "text": "Blinka"
+        "color": "0x000000",
+        "max_glyphs":16
       }
     }
   ]
