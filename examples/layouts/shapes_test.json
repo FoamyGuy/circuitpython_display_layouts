@@ -48,13 +48,18 @@
     {
       "view_type": "Polygon",
       "attributes":{
-          "points": [
-            [4,"DISPLAY_HEIGHT/2+8"],
-            [14, "DISPLAY_HEIGHT/2-8"],
-            [50,"DISPLAY_HEIGHT/2-8"],
-            [60,"DISPLAY_HEIGHT/2+8"]
-          ],
+          "points": [[4,"DISPLAY_HEIGHT/2+8"],[14, "DISPLAY_HEIGHT/2-8"],[50,"DISPLAY_HEIGHT/2-8"], [60,"DISPLAY_HEIGHT/2+8"]]
           "outline": "0x00FFFF"
+      }
+    },
+    {
+      "view_type": "Circle",
+      "attributes":{
+          "x": "DISPLAY_WIDTH/2",
+          "y": "24",
+          "radius": 20,
+          "fill": "0xAAAAAA",
+          "outline": "0xFF0000"
       }
     }
   ]

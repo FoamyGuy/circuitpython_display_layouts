@@ -8,6 +8,7 @@ from display_layouts.views.on_disk_bitmap import OnDiskBitmapView
 from display_layouts.views.line import LineView
 from display_layouts.views.rect import RectView
 from display_layouts.views.roundrect import RoundRectView
+from display_layouts.views.circle import CircleView
 
 class AbsoluteLayout:
     def __init__(self, display, layout_json):
@@ -70,4 +71,8 @@ class AbsoluteLayout:
                 roundrect_view = RoundRectView(self._display, view)
                 self._sub_views.append(roundrect_view)
                 layout_group.append(roundrect_view.roundrect)
+            if view["view_type"] == "Circle":
+                circle_view = CircleView(self._display, view)
+                self._sub_views.append(circle_view)
+                layout_group.append(circle_view.circle)
         return layout_group
