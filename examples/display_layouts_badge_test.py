@@ -8,7 +8,8 @@ f.close()
 main_layout = AbsoluteLayout(board.DISPLAY, layout_str)
 
 board.DISPLAY.show(main_layout.view)
-
+main_layout.sub_view_by_id("name_lbl").label.text = "Blinka"
+main_layout.sub_view_by_id("name_lbl").update_position()
 
 while True:
     pass

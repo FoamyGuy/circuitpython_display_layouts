@@ -84,17 +84,9 @@ class LabelView(View):
                 padding_bottom=_padding_bottom,
                 padding_left=_padding_left,
                 padding_right=_padding_right,
-                padding_top=_padding_top
+                padding_top=_padding_top, scale=self._scale
             )
 
-
-            if self._scale != 1:
-                group = displayio.Group(scale=self._scale)
-            else:
-                group = displayio.Group()
-
-            group.append(self.label)
-            self.group = group
             self.update_position()
 
             if "anchor_point" in layout_json["attributes"]:
@@ -116,8 +108,8 @@ class LabelView(View):
         _x = 0
         if "x" in layout_json["attributes"]:
             _x = self.keyword_compiler(layout_json["attributes"]["x"], {"WIDTH":_width*self._scale, "HEIGHT": _height*self._scale})
-            self.group.x = _x
+            self.label.x = _x
         _y = 0
         if "y" in layout_json["attributes"]:
             _y = self.keyword_compiler(layout_json["attributes"]["y"], {"WIDTH":_width*self._scale, "HEIGHT": _height*self._scale})
-            self.group.y = _y
+            self.label.y = _y
