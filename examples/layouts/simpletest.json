@@ -8,10 +8,10 @@
         "anchored_position": ["DISPLAY_WIDTH/2", "DISPLAY_HEIGHT/8"],
         "color": "0xFF00FF",
         "anchor_point": [0.5, 0.0],
-        "text": "1",
+        "text": "Hello World\nBlinka Layouts",
         "max_glyphs": 60,
         "background_color": "0x0000FF",
-        "line_spacing": 1.8
+        "line_spacing": 2
       }
     },
     {
