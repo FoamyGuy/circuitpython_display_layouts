@@ -15,7 +15,7 @@
       }
     },
     {
-      "view_type": "Image",
+      "view_type": "OnDiskBitmap",
       "id":"main_img",
       "attributes":{
         "image_file": "images/2bit.bmp",
@@ -27,7 +27,6 @@
     },
     {
       "view_type": "OnDiskBitmap",
-      "id":"main_img",
       "attributes":{
         "image_file": "images/4bit.bmp",
         "x": "DISPLAY_WIDTH-WIDTH",

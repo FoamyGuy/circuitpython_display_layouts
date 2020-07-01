@@ -15,7 +15,7 @@ display_bus = displayio.FourWire(
 )
 display = adafruit_ili9341.ILI9341(display_bus, width=320, height=240)
 
-f = open("layouts/shapes_test.json", "r")
+f = open("layouts/simpletest.json", "r")
 layout_str = f.read()
 f.close()
 main_layout = AbsoluteLayout(display, layout_str)
