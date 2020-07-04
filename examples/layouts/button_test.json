@@ -9,7 +9,11 @@
           "y": "DISPLAY_HEIGHT/2",
           "height": 34,
           "width": 74,
-          "label": "HELLO WORLD"
+          "style": "SHADOWROUNDRECT",
+          "label": "HELLO WORLD",
+          "label_color":"0x0000FF",
+          "fill_color":"0x9999FF",
+          "outline_color":"0x0000FF"
       }
     }
   ]
