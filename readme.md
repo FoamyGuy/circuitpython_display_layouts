@@ -26,9 +26,32 @@ The two primary ways we aim to do this are:
         "background_color": "0x0000FF",
         "line_spacing": 1.8
       }
+    },
+    {
+      "view_type": "Image",
+      "id":"main_img",
+      "attributes":{
+        "image_file": "images/2bit.bmp",
+        "x": "DISPLAY_WIDTH/2-WIDTH/2",
+        "y":85,
+        "padding": 16,
+        "background_color": "0x777777"
+      }
+    },
+    {
+      "view_type": "OnDiskBitmap",
+      "id":"main_img",
+      "attributes":{
+        "image_file": "images/4bit.bmp",
+        "x": "DISPLAY_WIDTH-WIDTH",
+        "y":70,
+        "padding": 16,
+        "background_color": "0x777777"
+      }
     }
   ]
 }
+
  ```
  And allow you to render it to the screen with some python code like this:
  ```python
@@ -49,11 +72,18 @@ main_layout.sub_view_by_id("main_lbl").label.text = "Changed\nText By Id"
 while True:
     pass
 ```
+The layout above would look like this:
+
+![simpletest_screenshot](examples/screenshots/screenshot_simpletest.bmp)
+
 For more examples see the [examples](examples) directory in the repo.
 
 If you have any feedback about the project please get in touch I am curious to get input :)
 
 Release Notes:
+- 7/4/2020
+    - RasPi/Blinka test script to screenshot the example layouts
+    - Adding screenshots to repo
 - 6/27/2020:
     - Circle view_type implemented and added to [Shapes example](examples/display_layouts_shapes_test.py) and [shapes_test.json](examples/layouts/shapes_test.json) layout file
     - Triangle view_type implemented and added to [Shapes example](examples/display_layouts_shapes_test.py) and [shapes_test.json](examples/layouts/shapes_test.json) layout file
