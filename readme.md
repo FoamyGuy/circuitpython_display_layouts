@@ -81,6 +81,8 @@ For more examples see the [examples](examples) directory in the repo.
 If you have any feedback about the project please get in touch I am curious to get input :)
 
 Release Notes:
+- 7/30/2020
+    - SparkLine view_type implemented and added to [Sparkline Example](examples/display_sparkline_test.py) and [sparkline_test.json](examples/layouts/sparkline_test.json) layout file
 - 7/4/2020
     - RasPi/Blinka test script to screenshot the example layouts
     - Adding screenshots to repo

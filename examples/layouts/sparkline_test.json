@@ -1,0 +1,24 @@
+{
+  "view_type": "AbsoluteLayout",
+  "sub_views": [
+    {
+      "view_type": "SparkLine",
+      "id": "main_sparkline",
+      "attributes":{
+          "x": "DISPLAY_WIDTH/2-WIDTH/2",
+          "y": "DISPLAY_HEIGHT/2-WIDTH/2",
+          "height": 280,
+          "width": 200,
+          "color":"0x9999FF",
+          "points": [
+            10,
+            5,
+            10,
+            5,
+            15
+          ]
+
+      }
+    }
+  ]
+}

@@ -10,6 +10,7 @@ from display_layouts.views.rect import RectView
 from display_layouts.views.roundrect import RoundRectView
 from display_layouts.views.circle import CircleView
 from display_layouts.views.button import ButtonView
+from display_layouts.views.sparkline import SparkLineView
 from display_layouts.views.triangle import TriangleView
 
 class AbsoluteLayout:
@@ -84,4 +85,8 @@ class AbsoluteLayout:
                 button_view = ButtonView(self._display, view)
                 self._sub_views.append(button_view)
                 layout_group.append(button_view.button.group)
+            if view["view_type"] == "SparkLine":
+                sparkline_view = SparkLineView(self._display, view)
+                self._sub_views.append(sparkline_view)
+                layout_group.append(sparkline_view.sparkline)
         return layout_group
