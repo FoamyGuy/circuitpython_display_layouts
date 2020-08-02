@@ -54,6 +54,6 @@ class CircleView(View):
                 _y = self.keyword_compiler(layout_json["attributes"]["y"], {"WIDTH":_width, "HEIGHT": _height})
 
             self.circle = Circle(_x, _y, _r, fill=_fill, outline=_outline)
-
+            self.view = self.circle
         else:
             raise MissingAttributesError()

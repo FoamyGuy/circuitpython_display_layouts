@@ -46,6 +46,6 @@ class LineView(View):
                 _y1 = self.keyword_compiler(layout_json["attributes"]["y1"])
 
             self.line = Line(_x0, _y0, _x1, _y1, color=_color)
-
+            self.view = self.line
         else:
             raise MissingAttributesError()

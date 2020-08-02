@@ -83,6 +83,7 @@ class ButtonView(View):
                 fill_color=_fill, outline_color=_outline, label=_label,
                 label_color=_label_color, label_font=_font
             )
+            self.view = self.button
 
         else:
             raise MissingAttributesError()

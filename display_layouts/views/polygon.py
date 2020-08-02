@@ -35,6 +35,6 @@ class PolygonView(View):
                     _points.append((self.keyword_compiler(_point[0]),self.keyword_compiler(_point[1])))
 
             self.polygon = Polygon(_points, outline=_outline)
-
+            self.view = self.polygon
         else:
             raise MissingAttributesError()

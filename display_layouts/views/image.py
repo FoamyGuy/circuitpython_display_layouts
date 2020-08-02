@@ -95,6 +95,7 @@ class ImageView(View):
             if "anchored_position" in layout_json["attributes"]:
                 pos = layout_json["attributes"]["anchored_position"]
                 self.image.anchored_position = (self.keyword_compiler(pos[0]), self.keyword_compiler(pos[1]))
+            self.view = self.image
         else:
             #default attributes
             pass

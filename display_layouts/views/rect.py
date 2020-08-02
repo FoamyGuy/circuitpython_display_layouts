@@ -54,6 +54,6 @@ class RectView(View):
                 _y = self.keyword_compiler(layout_json["attributes"]["y"], {"WIDTH":_width, "HEIGHT": _height})
 
             self.rect = Rect(_x, _y, _width, _height, fill=_fill, outline=_outline, stroke=_stroke)
-
+            self.view = self.rect
         else:
             raise MissingAttributesError()

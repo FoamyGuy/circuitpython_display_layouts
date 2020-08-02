@@ -76,5 +76,6 @@ class SparkLineView(View):
                 for _point in _points:
                     self.sparkline.add_value(_point)
 
+            self.view = self.sparkline
         else:
             raise MissingAttributesError()

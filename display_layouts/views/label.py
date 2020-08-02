@@ -96,6 +96,8 @@ class LabelView(View):
             if "anchored_position" in layout_json["attributes"]:
                 pos = layout_json["attributes"]["anchored_position"]
                 self.label.anchored_position = (self.keyword_compiler(pos[0]), self.keyword_compiler(pos[1]))
+
+            self.view = self.label
         else:
             #default attributes
             pass

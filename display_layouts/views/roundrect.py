@@ -58,6 +58,6 @@ class RoundRectView(View):
                 _y = self.keyword_compiler(layout_json["attributes"]["y"], {"WIDTH":_width, "HEIGHT": _height})
 
             self.roundrect = RoundRect(_x, _y, _width, _height, _r, fill=_fill, outline=_outline, stroke=_stroke)
-
+            self.view = self.roundrect
         else:
             raise MissingAttributesError()

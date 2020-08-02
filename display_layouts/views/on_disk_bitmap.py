@@ -93,6 +93,8 @@ class OnDiskBitmapView(View):
             if "anchored_position" in layout_json["attributes"]:
                 pos = layout_json["attributes"]["anchored_position"]
                 self.on_disk_bitmap.anchored_position = (self.keyword_compiler(pos[0]), self.keyword_compiler(pos[1]))
+
+            self.view = self.on_disk_bitmap
         else:
             #default attributes
             pass

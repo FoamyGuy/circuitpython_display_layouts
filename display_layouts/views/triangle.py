@@ -59,5 +59,6 @@ class TriangleView(View):
 
             self.triangle = Triangle(_x0, _y0, _x1, _y1, _x2,_y2, fill=_fill, outline=_outline)
 
+            self.view = self.triangle
         else:
             raise MissingAttributesError()
