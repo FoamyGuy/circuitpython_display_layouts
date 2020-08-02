@@ -1,21 +1,10 @@
 import json
 import displayio
 from display_layouts.layout_exceptions import MissingTypeError, IncorrectTypeError, MissingSubViewsError
-from display_layouts.views.label import LabelView
-from display_layouts.views.image import ImageView
-from display_layouts.views.polygon import PolygonView
-from display_layouts.views.on_disk_bitmap import OnDiskBitmapView
-from display_layouts.views.line import LineView
-from display_layouts.views.rect import RectView
-from display_layouts.views.roundrect import RoundRectView
-from display_layouts.views.circle import CircleView
-from display_layouts.views.button import ButtonView
-from display_layouts.views.sparkline import SparkLineView
-from display_layouts.views.triangle import TriangleView
-
 class AbsoluteLayout:
     def __init__(self, display, layout_json):
         self.layout_json_obj = json.loads(layout_json)
+
         self._display = display
         self._sub_views = []
         self._sub_views_id_to_index = {}
@@ -38,6 +27,36 @@ class AbsoluteLayout:
 
 
     def _build_group_from_layout_json(self):
+
+        _imports_needed_dict = {}
+        for view in self.layout_json_obj['sub_views']:
+            _imports_needed_dict[view['view_type']] = ""
+        #print(_imports_needed_dict)
+        for view_type in _imports_needed_dict.keys():
+            if view_type == "Line":
+                from display_layouts.views.line import LineView
+            if view_type == "RoundRect":
+                from display_layouts.views.roundrect import RoundRectView
+            if view_type == "Rect":
+                from display_layouts.views.rect import RectView
+            if view_type == "Triangle":
+                from display_layouts.views.triangle import TriangleView
+            if view_type == "SparkLine":
+                from display_layouts.views.sparkline import SparkLineView
+            if view_type == "Button":
+                from display_layouts.views.button import ButtonView
+            if view_type == "Circle":
+                from display_layouts.views.circle import CircleView
+            if view_type == "OnDiskBitmap":
+                from display_layouts.views.on_disk_bitmap import OnDiskBitmapView
+            if view_type == "Polygon":
+                from display_layouts.views.polygon import PolygonView
+            if view_type == "Image":
+                from display_layouts.views.image import ImageView
+            if view_type == "Label":
+                from display_layouts.views.label import LabelView
+
+
         layout_group = displayio.Group(max_size=len(self.layout_json_obj["sub_views"]))
 
         for index, view in enumerate(self.layout_json_obj["sub_views"]):
