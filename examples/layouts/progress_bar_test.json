@@ -1,0 +1,19 @@
+{
+  "view_type": "AbsoluteLayout",
+  "sub_views": [
+    {
+      "view_type": "ProgressBar",
+      "id":"main_progress",
+      "attributes":{
+        "x": "DISPLAY_WIDTH/2-WIDTH/2",
+        "y": "40",
+        "width": "DISPLAY_WIDTH-20",
+        "height": "30",
+        "bar_color": "0xFF00FF",
+        "stroke": 1,
+        "outline_color": "0xFFFFFF",
+        "progress": 0.3
+      }
+    }
+  ]
+}

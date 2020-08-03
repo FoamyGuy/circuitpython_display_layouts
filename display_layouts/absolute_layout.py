@@ -63,10 +63,12 @@ class AbsoluteLayout:
             if view_type == "Image":
                 from display_layouts.views.image import ImageView
                 self._view_type_dict[view_type] = ImageView
+            if view_type == "ProgressBar":
+                from display_layouts.views.progress_bar import ProgressBarView
+                self._view_type_dict[view_type] = ProgressBarView
             if view_type == "Label":
                 from display_layouts.views.label import LabelView
                 self._view_type_dict[view_type] = LabelView
-
 
         layout_group = displayio.Group(max_size=len(self.layout_json_obj["sub_views"]))
 
