@@ -56,18 +56,28 @@ class LabelView(View):
                 _background_tight = int(layout_json["attributes"]["background_tight"])
 
             _padding_top = 0
+            _padding_right = 0
+            _padding_left = 0
+            _padding_bottom = 0
+
+            if "padding" in layout_json["attributes"]:
+                _padding_top = int(layout_json["attributes"]["padding"])
+                _padding_right = int(layout_json["attributes"]["padding"])
+                _padding_left = int(layout_json["attributes"]["padding"])
+                _padding_bottom = int(layout_json["attributes"]["padding"])
+
             if "padding_top" in layout_json["attributes"]:
                 _padding_top = int(layout_json["attributes"]["padding_top"])
 
-            _padding_right = 0
+
             if "padding_right" in layout_json["attributes"]:
                 _padding_right = int(layout_json["attributes"]["padding_right"])
 
-            _padding_left = 0
+
             if "padding_left" in layout_json["attributes"]:
                 _padding_left = int(layout_json["attributes"]["padding_left"])
 
-            _padding_bottom = 0
+
             if "padding_bottom" in layout_json["attributes"]:
                 _padding_bottom = int(layout_json["attributes"]["padding_bottom"])
 

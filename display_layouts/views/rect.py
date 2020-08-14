@@ -36,10 +36,12 @@ class RectView(View):
             _width = 0
             if "width" in layout_json["attributes"]:
                 _width = self.keyword_compiler(layout_json["attributes"]["width"])
+            self.width = _width
 
             _height = 0
             if "height" in layout_json["attributes"]:
                 _height = self.keyword_compiler(layout_json["attributes"]["height"])
+            self.height = _height
 
             _stroke = 0
             if "stroke" in layout_json["attributes"]:

@@ -63,6 +63,8 @@ class OnDiskBitmapView(View):
             odb_grid.y = _padding // 2
             _width = odb.width
             _height = odb.height
+            self.width = _width
+            self.height = _height
             if _padding and _background_color:
                 # Draw a green background
                 bg_bitmap = displayio.Bitmap(odb.width + _padding, odb.height + _padding, 1)

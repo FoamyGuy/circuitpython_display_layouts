@@ -64,6 +64,8 @@ class ImageView(View):
 
             _width = image.width
             _height = image.height
+            self.width = _width
+            self.height = _height
             if _padding and _background_color:
                 # Draw a green background
                 bg_bitmap = displayio.Bitmap(image.width + _padding, image.height + _padding, 1)

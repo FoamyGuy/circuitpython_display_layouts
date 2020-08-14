@@ -1,0 +1,101 @@
+{
+  "view_type": "LinearLayout",
+  "attributes":{
+    "x":10,
+    "y":40
+  }
+  "sub_views": [
+    {
+      "view_type": "Label",
+      "id":"main_lbl",
+      "attributes":{
+        "x":10,
+        "y":10,
+        "color": "0xFF00FF",
+        "text": "Something",
+        "max_glyphs": 60,
+        "padding": 2,
+        "background_color": "0x0000FF"
+      }
+    },
+    {
+      "view_type": "Label",
+      "id":"main_lbl",
+      "attributes":{
+        "x":10,
+        "y":0,
+        "color": "0xFF00FF",
+        "text": "Another Thing",
+        "max_glyphs": 60,
+        "padding": 2,
+        "background_color": "0x0000FF"
+      }
+    },
+    {
+      "view_type": "Label",
+      "id":"main_lbl",
+      "attributes":{
+        "x":10,
+        "y":4,
+        "color": "0xFF00FF",
+        "text": "Another Thing",
+        "max_glyphs": 60,
+        "padding": 2,
+        "background_color": "0x0000FF"
+      }
+    },
+    {
+      "view_type": "Button",
+      "id": "main_btn",
+      "attributes":{
+          "x": "10",
+          "y": "4",
+          "height": 34,
+          "width": 74,
+          "style": "SHADOWROUNDRECT",
+          "label": "HELLO WORLD",
+          "label_color":"0x0000FF",
+          "fill_color":"0x9999FF",
+          "outline_color":"0x0000FF"
+      }
+    },
+    {
+      "view_type": "Image",
+      "id":"main_img",
+      "attributes":{
+        "image_file": "images/2bit.bmp",
+        "x": "10",
+        "y":4,
+        "padding": 16,
+        "background_color": "0x777777"
+      }
+    },
+    {
+      "view_type": "ProgressBar",
+      "id":"main_progress",
+      "attributes":{
+        "x": 10,
+        "y": 27,
+        "width": "DISPLAY_WIDTH-20",
+        "height": "30",
+        "bar_color": "0x00CCBB",
+        "stroke": 1,
+        "outline_color": "0xFFFFFF",
+        "progress": 0.5
+      }
+    },
+    {
+      "view_type": "OnDiskBitmap",
+      "id":"second_img",
+      "attributes":{
+        "image_file": "images/4bit.bmp",
+        "x": "10",
+        "y":4,
+        "padding": 16,
+        "background_color": "0x777777"
+      }
+    }
+
+
+  ]
+}
