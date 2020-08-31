@@ -81,6 +81,8 @@ For more examples see the [examples](examples) directory in the repo.
 If you have any feedback about the project please get in touch I am curious to get input :)
 
 Release Notes:
+- 8/30/2020:
+    - BitmapLabel implemented.
 - 8/13/2020:
     - LinearLayout implemented and added to [LinearLayout Example](examples/display_layouts_linear_layout_test.py) and [linear_layout_test.json](examples/layouts/linear_layout_test.json) layout file. 
 - 8/2/2020:
