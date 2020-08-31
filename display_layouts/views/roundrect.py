@@ -36,10 +36,12 @@ class RoundRectView(View):
             _width = 0
             if "width" in layout_json["attributes"]:
                 _width = self.keyword_compiler(layout_json["attributes"]["width"])
+            self.width = 0
 
             _height = 0
             if "height" in layout_json["attributes"]:
                 _height = self.keyword_compiler(layout_json["attributes"]["height"])
+            self.height = 0
 
             _stroke = 0
             if "stroke" in layout_json["attributes"]:
