@@ -20,7 +20,7 @@
       "attributes":{
         "image_file": "images/2bit.bmp",
         "x": "DISPLAY_WIDTH/2-WIDTH/2",
-        "y":85,
+        "y":120,
         "padding": 16,
         "background_color": "0x777777"
       }
