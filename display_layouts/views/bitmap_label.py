@@ -126,3 +126,7 @@ class LabelView(View):
         if "y" in layout_json["attributes"]:
             _y = self.keyword_compiler(layout_json["attributes"]["y"], {"WIDTH":_width*self._scale, "HEIGHT": _height*self._scale})
             self.label.y = _y
+
+    @property
+    def height(self):
+        return self.view.bounding_box[3]

@@ -70,6 +70,9 @@ class LinearLayout:
             if view_type == "Label":
                 from display_layouts.views.label import LabelView
                 self._view_type_dict[view_type] = LabelView
+            if view_type == "BitmapLabel":
+                from display_layouts.views.bitmap_label import LabelView
+                self._view_type_dict[view_type] = LabelView
 
         layout_group = displayio.Group(max_size=len(self.layout_json_obj["sub_views"]))
 
